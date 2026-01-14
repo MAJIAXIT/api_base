@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      - TZ=${TIME_ZONE}
+      - PGTZ=${TIME_ZONE}
+    ports:
+        - "5432:5432"
+    env_file:
+      ${ENV_FILE}
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+    networks:
+        - db-network
+
+volumes:
+  postgres_data:
+
+networks:
+  db-network:
+      name: db-network

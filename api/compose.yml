@@ -1,0 +1,28 @@
+services:
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TZ: ${TIME_ZONE}
+    command: ./api
+    env_file:
+      ${ENV_FILE}
+    ports:
+      - 8080:8080
+      # - 8443:8443
+    volumes:
+      - ${LOGS_PATH}:/logs
+      # - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - db-network
+      - nginx-network
+
+networks:
+  db-network:
+    external: true
+  nginx-network:
+    external: true
+      
