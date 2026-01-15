@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"github.com/golang-jwt/jwt/v5"
 	"gorm.io/gorm"
 )

@@ -1,4 +1,4 @@
-module github.com/MAJIAXIT/projname/api
+module github.com/MAJIAXIT/api_base/api
 
 go 1.24.4
 

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/MAJIAXIT/projname/api/internal/service/auth"
+	"github.com/MAJIAXIT/api_base/api/internal/service/auth"
 	"github.com/gin-gonic/gin"
 )
 

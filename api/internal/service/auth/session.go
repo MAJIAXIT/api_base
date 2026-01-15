@@ -4,9 +4,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/MAJIAXIT/projname/api/internal/models/session"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	"github.com/MAJIAXIT/api_base/api/internal/models/session"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"gorm.io/gorm"
 )
 

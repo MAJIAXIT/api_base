@@ -10,7 +10,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
 )
 
 type PasswordHolder interface {

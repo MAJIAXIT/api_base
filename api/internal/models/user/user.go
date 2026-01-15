@@ -1,14 +1,14 @@
 package user
 
 import (
-	"github.com/MAJIAXIT/projname/api/internal/models/base"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
-	"github.com/MAJIAXIT/projname/api/pkg/password"
+	"github.com/MAJIAXIT/api_base/api/internal/models/base"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/password"
 )
 
 type User struct {
 	base.BaseModel
-	Login        string `json:"login" gorm:"uniqueIndex:idx_user_email"`
+	Login        string `json:"login" gorm:"uniqueIndex:idx_user_login"`
 	EncrPassword string `json:"encr_password,omitempty"`
 }
 

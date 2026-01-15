@@ -8,7 +8,7 @@ services:
       - '443:443'
     env_file:
       - ${ENV_FILE}
-    volumes:
+    # volumes:
       # - /etc/letsencrypt:/etc/letsencrypt:ro
     restart: unless-stopped
     networks:

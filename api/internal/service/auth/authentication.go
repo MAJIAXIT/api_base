@@ -3,10 +3,10 @@ package auth
 import (
 	"strings"
 
-	"github.com/MAJIAXIT/projname/api/internal/dto/auth"
-	"github.com/MAJIAXIT/projname/api/internal/models/user"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	"github.com/MAJIAXIT/api_base/api/internal/dto/auth"
+	"github.com/MAJIAXIT/api_base/api/internal/models/user"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"gorm.io/gorm"
 )
 

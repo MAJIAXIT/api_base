@@ -1,10 +1,10 @@
 package auth
 
 import (
-	auth_middleware "github.com/MAJIAXIT/projname/api/internal/middleware/auth"
-	transactions_mw "github.com/MAJIAXIT/projname/api/internal/middleware/transactions"
-	auth_service "github.com/MAJIAXIT/projname/api/internal/service/auth"
-	users_service "github.com/MAJIAXIT/projname/api/internal/service/users"
+	auth_middleware "github.com/MAJIAXIT/api_base/api/internal/middleware/auth"
+	transactions_mw "github.com/MAJIAXIT/api_base/api/internal/middleware/transactions"
+	auth_service "github.com/MAJIAXIT/api_base/api/internal/service/auth"
+	users_service "github.com/MAJIAXIT/api_base/api/internal/service/users"
 	"github.com/gin-gonic/gin"
 )
 

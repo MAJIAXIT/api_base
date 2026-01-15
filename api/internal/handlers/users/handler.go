@@ -1,9 +1,9 @@
 package users
 
 import (
-	auth_mw "github.com/MAJIAXIT/projname/api/internal/middleware/auth"
-	transactions_mw "github.com/MAJIAXIT/projname/api/internal/middleware/transactions"
-	"github.com/MAJIAXIT/projname/api/internal/service/users"
+	auth_mw "github.com/MAJIAXIT/api_base/api/internal/middleware/auth"
+	transactions_mw "github.com/MAJIAXIT/api_base/api/internal/middleware/transactions"
+	"github.com/MAJIAXIT/api_base/api/internal/service/users"
 
 	"github.com/gin-gonic/gin"
 )

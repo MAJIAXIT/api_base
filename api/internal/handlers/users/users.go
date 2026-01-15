@@ -3,8 +3,8 @@ package users
 import (
 	"net/http"
 
-	users_dto "github.com/MAJIAXIT/projname/api/internal/dto/users"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	users_dto "github.com/MAJIAXIT/api_base/api/internal/dto/users"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"github.com/gin-gonic/gin"
 )
 

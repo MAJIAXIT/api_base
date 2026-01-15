@@ -1,13 +1,13 @@
-package migrate
+package main
 
 import (
-	"os/user"
 	"runtime/debug"
 
-	"github.com/MAJIAXIT/projname/api/config"
-	"github.com/MAJIAXIT/projname/api/internal/models/session"
-	"github.com/MAJIAXIT/projname/api/pkg/database"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/config"
+	"github.com/MAJIAXIT/api_base/api/internal/models/session"
+	"github.com/MAJIAXIT/api_base/api/internal/models/user"
+	"github.com/MAJIAXIT/api_base/api/pkg/database"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
 	"gorm.io/gorm"
 )
 
@@ -54,8 +54,8 @@ func main() {
 
 func dropTables(tx *gorm.DB) error {
 	if err := tx.Migrator().DropTable(
-	// &user.User{},
-	// &session.Session{},
+		&user.User{},
+		&session.Session{},
 	); err != nil {
 		return logger.WrapError(err)
 	}

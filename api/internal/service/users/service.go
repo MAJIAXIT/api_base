@@ -1,9 +1,9 @@
 package users
 
 import (
-	auth_dto "github.com/MAJIAXIT/projname/api/internal/dto/auth"
-	users_dto "github.com/MAJIAXIT/projname/api/internal/dto/users"
-	"github.com/MAJIAXIT/projname/api/internal/models/user"
+	auth_dto "github.com/MAJIAXIT/api_base/api/internal/dto/auth"
+	users_dto "github.com/MAJIAXIT/api_base/api/internal/dto/users"
+	"github.com/MAJIAXIT/api_base/api/internal/models/user"
 	"gorm.io/gorm"
 )
 

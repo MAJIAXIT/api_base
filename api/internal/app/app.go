@@ -8,21 +8,21 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/MAJIAXIT/projname/api/config"
-	auth_mw "github.com/MAJIAXIT/projname/api/internal/middleware/auth"
-	transactions_mw "github.com/MAJIAXIT/projname/api/internal/middleware/transactions"
+	"github.com/MAJIAXIT/api_base/api/config"
+	auth_mw "github.com/MAJIAXIT/api_base/api/internal/middleware/auth"
+	transactions_mw "github.com/MAJIAXIT/api_base/api/internal/middleware/transactions"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	auth_hnd "github.com/MAJIAXIT/projname/api/internal/handlers/auth"
-	users_hnd "github.com/MAJIAXIT/projname/api/internal/handlers/users"
+	auth_hnd "github.com/MAJIAXIT/api_base/api/internal/handlers/auth"
+	users_hnd "github.com/MAJIAXIT/api_base/api/internal/handlers/users"
 
-	auth_svc "github.com/MAJIAXIT/projname/api/internal/service/auth"
-	users_svc "github.com/MAJIAXIT/projname/api/internal/service/users"
+	auth_svc "github.com/MAJIAXIT/api_base/api/internal/service/auth"
+	users_svc "github.com/MAJIAXIT/api_base/api/internal/service/users"
 
-	"github.com/MAJIAXIT/projname/api/pkg/database"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/database"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
 )
 
 type App struct {
@@ -180,12 +180,12 @@ func (a *App) Start() {
 	}()
 
 	// Start HTTPS server
-	go func() {
-		logger.Info("Starting HTTPS server on :%s", a.config.Server.HTTPSPort)
-		if err := a.httpsServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			logger.Fatal("HTTPS server error: %v", err)
-		}
-	}()
+	// go func() {
+	// 	logger.Info("Starting HTTPS server on :%s", a.config.Server.HTTPSPort)
+	// 	if err := a.httpsServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+	// 		logger.Fatal("HTTPS server error: %v", err)
+	// 	}
+	// }()
 
 	// Wait for interrupt signal to gracefully shutdown the server with
 	// a timeout of 5 seconds.
@@ -206,9 +206,9 @@ func (a *App) Start() {
 	if err := a.httpServer.Shutdown(ctx); err != nil {
 		logger.Info("HTTP server Shutdown: %v", err)
 	}
-	if err := a.httpsServer.Shutdown(ctx); err != nil {
-		logger.Info("HTTPS server Shutdown: %v", err)
-	}
+	// if err := a.httpsServer.Shutdown(ctx); err != nil {
+	// 	logger.Info("HTTPS server Shutdown: %v", err)
+	// }
 
 	// catching ctx.Done(). timeout of 5 seconds.
 	<-ctx.Done()

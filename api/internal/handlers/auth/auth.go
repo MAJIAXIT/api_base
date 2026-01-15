@@ -3,9 +3,9 @@ package auth
 import (
 	"net/http"
 
-	auth_dto "github.com/MAJIAXIT/projname/api/internal/dto/auth"
-	"github.com/MAJIAXIT/projname/api/internal/service/auth"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	auth_dto "github.com/MAJIAXIT/api_base/api/internal/dto/auth"
+	"github.com/MAJIAXIT/api_base/api/internal/service/auth"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"github.com/gin-gonic/gin"
 )
 

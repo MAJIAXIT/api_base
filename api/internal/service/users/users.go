@@ -3,11 +3,11 @@ package users
 import (
 	"errors"
 
-	auth_dto "github.com/MAJIAXIT/projname/api/internal/dto/auth"
-	users_dto "github.com/MAJIAXIT/projname/api/internal/dto/users"
-	"github.com/MAJIAXIT/projname/api/internal/models/user"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
-	"github.com/MAJIAXIT/projname/api/pkg/utils"
+	auth_dto "github.com/MAJIAXIT/api_base/api/internal/dto/auth"
+	users_dto "github.com/MAJIAXIT/api_base/api/internal/dto/users"
+	"github.com/MAJIAXIT/api_base/api/internal/models/user"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/utils"
 	"gorm.io/gorm"
 )
 
@@ -17,7 +17,8 @@ func (s *service) GetUserByLoginOrEmail(
 
 	var user user.User
 	if err := tx.
-		Where("login = ? OR email = ?", login, login).
+		// Where("login = ? OR email = ?", login, email).
+		Where("login = ?", login).
 		First(&user).
 		Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
@@ -114,6 +115,8 @@ func (s *service) UpdateUser(
 	if err := tx.Save(usr).Error; err != nil {
 		return nil, logger.WrapErrMsg(err, "Failed to save user")
 	}
+
+	usr.EncrPassword = ""
 
 	return usr, nil
 }

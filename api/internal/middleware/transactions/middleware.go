@@ -3,7 +3,7 @@ package transactions
 import (
 	"net/http"
 
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

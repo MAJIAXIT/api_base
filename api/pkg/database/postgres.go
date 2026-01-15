@@ -3,8 +3,8 @@ package database
 import (
 	"fmt"
 
-	"github.com/MAJIAXIT/projname/api/config"
-	"github.com/MAJIAXIT/projname/api/pkg/logger"
+	"github.com/MAJIAXIT/api_base/api/config"
+	"github.com/MAJIAXIT/api_base/api/pkg/logger"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
